@@ -53,7 +53,6 @@ env GO15VENDOREXPERIMENT 1
 # install Go related tools
 run go get \
     github.com/jteeuwen/go-bindata/go-bindata/ \
-    golang.org/x/tools/cmd/vet \
     golang.org/x/tools/cmd/cover
 
 # install nodejs tools
