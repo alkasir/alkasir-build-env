@@ -48,11 +48,6 @@ run rm -rf /tmp/go-bootstrap && mkdir -p /go/bin
 env GOPATH /go
 env PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 run for GOOS in linux darwin windows; do for GOARCH in amd64 386; do export GOOS; export GOARCH; echo "building $GOOS-$GOARCH"; go install std; done; done
-# install Go related tools
-run go get \
-    github.com/jteeuwen/go-bindata/go-bindata/ \
-    github.com/elazarl/go-bindata-assetfs/... \
-    golang.org/x/tools/cmd/cover
 
 # install nodejs tools
 run npm install -g webpack
