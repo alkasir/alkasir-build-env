@@ -41,8 +41,8 @@ RUN \
 run curl -sL https://deb.nodesource.com/setup_4.x | bash - && apt-get install -y nodejs
 
 # install go
-run mkdir -p /tmp/go-bootstrap && curl -sSL https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz | tar -C /tmp/go-bootstrap -xz
-run curl -sSL https://storage.googleapis.com/golang/go1.6.2.src.tar.gz | tar -C /usr/local -xz
+run mkdir -p /tmp/go-bootstrap && curl -sSL https://storage.googleapis.com/golang/go1.7.linux-amd64.tar.gz | tar -C /tmp/go-bootstrap -xz
+run curl -sSL https://storage.googleapis.com/golang/go1.7.src.tar.gz | tar -C /usr/local -xz
 run cd /usr/local/go/src && GOROOT_BOOTSTRAP=/tmp/go-bootstrap/go ./make.bash --no-clean 2>&1
 run rm -rf /tmp/go-bootstrap && mkdir -p /go/bin
 env GOPATH /go
